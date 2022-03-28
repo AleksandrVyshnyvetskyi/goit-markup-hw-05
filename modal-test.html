@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal tets</title>
+  </head>
+  <body>
+    <button data-modal-open>открыть окно</button>
+
+    <div data-modal class="backdrop is-hidden">
+      <div class="madal">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+          quidem earum quae. Laborum et corporis recusandae vitae consectetur
+          architecto voluptatibus, rem repellat placeat aut illo error cumque
+          provident dolore repellendus?
+        </p>
+        <button data-modal-close>закрыть</button>
+      </div>
+    </div>
+
+    <!-- Вся твоя разметка, включая разметку модалки -->
+
+    <!-- Ставим перед закрывающим тегом body -->
+    <script src="./js/modal.js"></script>
+  </body>
+</html>

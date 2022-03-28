@@ -13,6 +13,8 @@
   --bgd-button-color: #f5f4fa;
   /* цвет иконок */
   --svg-color: #afb1b8;
+  /* Фон модалки */
+  --bgd-modal: #afb1b8;
 }
 
 body {
@@ -23,6 +25,7 @@ body {
   letter-spacing: 0.03em;
   font-size: 14px;
   margin: 0;
+  position: relative;
 }
 
 a {
@@ -59,6 +62,10 @@ img {
 /* Шапка */
 .header-padding {
   border-bottom: solid 1px #ececec;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: var(--main-bgd-color);
 }
 
 .container-nav {
@@ -85,7 +92,18 @@ img {
 
 .site-nav.current {
   color: var(--theme-accent);
-  border-bottom: 4px solid var(--theme-accent);
+  position: relative;
+}
+
+.site-nav.current::after {
+  position: absolute;
+  top: 77px;
+  right: 0;
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 4px;
+  background: var(--theme-accent);
   border-radius: 2px;
 }
 
@@ -191,6 +209,9 @@ img {
 }
 
 /* Герой */
+.content {
+  padding-top: 80px;
+}
 
 .overlay {
   max-width: 1600px;
@@ -242,6 +263,148 @@ img {
   text-align: center;
 }
 
+/* Модальное окно */
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.backdrop {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms;
+}
+
+.backdrop.is-hidden .backdrop-form {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+.backdrop-form {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--main-bgd-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform 2500ms var(--bgd-modal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backdrop-btn {
+  position: absolute;
+  fill: currentColor;
+  top: 8px;
+  right: 8px;
+  border: 0;
+  padding: 0;
+  border: 2px solid #0000000a;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: var(--main-bgd-color);
+  cursor: pointer;
+  transition: transform 2500ms var(--bgd-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backdrop-btn:hover {
+  fill: var(--theme-accent);
+}
+
+.modal-title {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  width: 448px;
+  margin: 40px 40px 12px;
+  color: var(--main-text-color);
+}
+
+.form-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label-box {
+  height: 58px;
+  margin-bottom: 10px;
+}
+
+.label {
+  height: 58px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+}
+
+.regtangle {
+  width: 448px;
+  height: 40px;
+  margin-top: 4px;
+  border: 1px solid var(#21212133);
+}
+
+.text-area {
+  height: 120px;
+  resize: none;
+}
+
+.checkbox {
+  color: var(--text-color);
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.checkbox-link {
+  color: var(--theme-accent);
+  text-decoration: underline;
+}
+
+.btn-sumbit {
+  width: 200px;
+  height: 50px;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--main-bgd-color);
+  background-color: var(--theme-accent);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
 /* Секции */
 
 .section {
