@@ -75,12 +75,17 @@
           </button>
         </div>
       </section>
+
       <!-- Модальное окно -->
+
+
+
+
       <div class="backdrop is-hidden" data-modal>
         <div class="modal">
           <div class="backdrop-form">
             <button class="backdrop-btn" data-modal-close>
-              <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 4.108 13.892 3 9.5 7.392 5.108 3 4 4.108 8.392 8.5 4 12.892 5.108 14 9.5 9.608 13.892 14 15 12.892 10.608 8.5 15 4.108Z" fill="#000"/></svg>
+              <svg class="close-btn" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M15 4.108 13.892 3 9.5 7.392 5.108 3 4 4.108 8.392 8.5 4 12.892 5.108 14 9.5 9.608 13.892 14 15 12.892 10.608 8.5 15 4.108Z"/></svg>
               </svg>
             </button>
             <h3 class="modal-title">Оставьте свои данные, мы вам перезвоним</h3>
@@ -88,7 +93,7 @@
               <ul>
                 <li class="label-box"><label class="label" >
                 Имя
-                <input class="regtangle" type="text" name="username" autofocus />
+                <input class="regtangle" type="text" name="username" autofocus/> 
                 </label></li>
                 <li class="label-box"><label class="label">
                 Телефон
@@ -100,7 +105,7 @@
                 </label></li>
                 <li class="label-box"><label class="label">
                 Комментарий
-                <textarea class="regtangle text-area" name="feedback" rows="5" placeholder="Введите текст"></textarea>
+                <textarea class="regtangle text-area" name="feedback" rows="15" placeholder="Введите текст"></textarea>
                  </label></li>
                </form> 
               </ul>
@@ -108,17 +113,15 @@
             <input class="checkbox" type="checkbox" name="" value="" />
             Соглашаюсь с рассылкой и принимаю <a class="checkbox-link" href="">Условия договора</a>
             </label>
-              
-              
-              
-              
-              
-              
               <button class="btn-sumbit" type="submit">Отправить</button>
             </form>
           </div>
         </div>
       </div>
+
+
+
+
       <section class="section">
         <div class="container">
           <h2 class="visually-hidden">Особенности</h2>
@@ -508,6 +511,15 @@
               </a>
             </li>
           </ul>
+        </div>
+        <div>
+          <form class="submit-footer">
+            <label >
+              <p class="title-submit-footer">Подпишитесь на рассылку</p>
+              <input class="submit-email-form" type="email" name="email" placeholder="E-mail"/>
+            </label>
+            <button class="btn-submit-footer" type="submit">Подписаться <svg class="btn-submit-svg" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 0 0 13.5l7.67 2.84L19.5 5.25l-8.998 12.14.007.002-.009-.002V24l4.301-5.018L20.251 21 24 0Z" fill="#fff"/></svg></button>
+          </form>
         </div>
       </div>
     </footer>
